@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('munkalap', function (Blueprint $table) {
-            //csatlakozások és a tábla alapvető dolgai
+        Schema::create('munkalaps', function (Blueprint $table) {
             $table->id();
             $table->foreignId("munkafelvevo_azonosito")->constrained()->onUpdate("cascade")->onDelete("cascade");
             $table->date("felvetel_idopontja");
-            $table->string("szerelo_azonosito");
+            $table->string("szerelo_azonosito")->constrained()->onUpdate("cascade")->onDelete("cascade");;
             //autó adatai
             $table->string("rendszam", 6);
             $table->string("gyartmany");
@@ -24,7 +23,7 @@ return new class extends Migration
             $table->string("tuajdonos_nev");
             $table->string("tulajdonos_cim");
             //Munkafolymat
-            $table->foreignId("munkafolymat_id")->constrained()->onUpdate("cascade")->onDelete("cascade");;
+            $table->foreignId("munkafolyamat_id")->constrained()->onUpdate("cascade")->onDelete("cascade");;
             $table->foreignId("alkatresz_id")->constrained()->onUpdate("cascade")->onDelete("cascade");;
             $table->string("alkatresz_mennyiseg");
             $table->foreignId("anyag_id")->constrained()->onUpdate("cascade")->onDelete("cascade");
@@ -38,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('munkalap');
+        Schema::dropIfExists('munkalaps');
     }
 };

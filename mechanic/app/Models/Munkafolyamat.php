@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Munkafolyamat extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nev',
+        'idotartam',
+    ];
+    public function munkalap(){
+        return $this->HasMany(Munkalap::class);
+    }
 }

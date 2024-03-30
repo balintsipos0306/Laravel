@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('munkafelvevo', function (Blueprint $table) {
-            $table->string("azonosito", 6)->primary();
+        Schema::create('alkatreszs', function (Blueprint $table) {
+            $table->id();
             $table->string("nev");
-            //$table->foreignId("Szerelo_Azonosito")->constrained()->onUpdate("cascade")->onDelete("cascade"); foreing key
-            $table->string("jelszo")->password_hash();
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('munkafelvevo');
+        Schema::dropIfExists('alkatreszs');
     }
 };

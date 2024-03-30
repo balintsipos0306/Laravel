@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Alkatresz extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nev',
+    ];
+    public function munkalap(){
+        return $this->hasMany(Munkalap::class);
+    }
 }
