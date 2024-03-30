@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('munkafelvevos', function (Blueprint $table) {
             $table->string("azonosito", 6)->primary();
             $table->string("nev");
-            //$table->foreignId("Szerelo_Azonosito")->constrained()->onUpdate("cascade")->onDelete("cascade"); foreing key
             $table->string("jelszo")->password_hash();
             $table->timestamps();
         });

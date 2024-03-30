@@ -27,7 +27,7 @@ class MunkalapFactory extends Factory
             'szerelo_azonosito' => Szerelo::inRandomOrder()->first()->azonosito,
             'munkafelvevo_azonosito' => Munkafelvevo::inRandomOrder()->first()->azonosito,
             // //autó adatai
-            'rendszam' => "???-###",
+            'rendszam' => fake()->bothify("???-###"),
             'gyartmany' => "Ford",
             'gyartas_eve' => fake()->year(),
             'tuajdonos_nev' => fake()-> name(),
