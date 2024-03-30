@@ -14,7 +14,4 @@ class Szerelo extends Model
         'nev',
         'password',
     ];
-    public function munkalap(){
-        return $this->HasMany(Munkalap::class);
-    }
 }

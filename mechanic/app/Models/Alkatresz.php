@@ -11,7 +11,4 @@ class Alkatresz extends Model
     protected $fillable = [
         'nev',
     ];
-    public function munkalap(){
-        return $this->hasMany(Munkalap::class);
-    }
 }

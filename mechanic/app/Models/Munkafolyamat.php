@@ -12,7 +12,5 @@ class Munkafolyamat extends Model
         'nev',
         'idotartam',
     ];
-    public function munkalap(){
-        return $this->HasMany(Munkalap::class);
-    }
+
 }

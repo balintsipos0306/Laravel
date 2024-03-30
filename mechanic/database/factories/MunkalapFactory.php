@@ -30,7 +30,7 @@ class MunkalapFactory extends Factory
             'rendszam' => fake()->bothify("???-###"),
             'gyartmany' => "Ford",
             'gyartas_eve' => fake()->year(),
-            'tuajdonos_nev' => fake()-> name(),
+            'tulajdonos_nev' => fake()-> name(),
             'tulajdonos_cim' => fake()->address(),
             // //Munkafolymat
             'alkatresz_mennyiseg' => 1,
