@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('munkafelvevo', function (Blueprint $table) {
-            $table->string("azonosito")->primary();
+            $table->string("azonosito", 6)->primary();
             $table->string("nev");
             //$table->foreignId("Szerelo_Azonosito")->constrained()->onUpdate("cascade")->onDelete("cascade"); foreing key
             $table->string("jelszo")->password_hash();
