@@ -44,6 +44,22 @@
     </header>
 
     <main>
+        <div class="container">
+
+            <h2>Belépés</h2>
+
+            <form id="login">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Felhasználónév</label>
+                    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Jelszó</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
 
     </main>
 

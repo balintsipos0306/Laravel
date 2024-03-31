@@ -1,0 +1,28 @@
+header{
+    height: 4em;
+}
+
+main{
+    width: 100%;
+    height: calc(100vh - 4em);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container{
+    background-color: lightgray;
+    width: 50%;
+    height: max-content;
+    padding: 1%;
+    border-radius: 15px;
+}
+
+#login{
+    text-align: left;
+    font-weight: bold;
+}
+
