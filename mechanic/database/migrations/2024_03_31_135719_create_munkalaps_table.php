@@ -13,23 +13,31 @@ return new class extends Migration
     {
         Schema::create('munkalaps', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("munkafelvevo_azonosito")->constrained(table: 'munkafelvevos', indexName: 'azonosito')->onUpdate("cascade")->onDelete("cascade");
+            $table->string("munkafelvevo_azonosito", 6);
+            $table->foreign('munkafelvevo_azonosito')->references('azonosito')->on('munkafelvevos')->cascadeOnDelete()->cascadeOnUpdate();
             $table->date("felvetel_idopontja");
-            $table->foreignId("szerelo_azonosito")->constrained(table: 'szerelos', indexName: 'azonosito')->onUpdate("cascade")->onDelete("cascade");;
+            $table->string("szerelo_azonosito", 6);
+            $table->foreign('szerelo_azonosito')->references('azonosito')->on('szerelos')->cascadeOnDelete()->cascadeOnUpdate();
             //autó adatai
-            $table->string("rendszam", 6);
+            $table->string("rendszam", 7);
             $table->string("gyartmany");
             $table->integer("gyartas_eve");
             $table->string("tulajdonos_nev");
             $table->string("tulajdonos_cim");
             //Munkafolymat
-            $table->foreignId("munkafolyamat_id")->constrained()->onUpdate("cascade")->onDelete("cascade");;
-            $table->foreignId("alkatresz_id")->constrained()->onUpdate("cascade")->onDelete("cascade");;
+            //$table->unsignedBigInteger("munkafolyamat_id");
+            $table->foreignId('munkafolyamat_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();;
+
+            //$table->unsignedBigInteger("alkatresz_id");
+            $table->foreignId('alkatresz_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();;
+
             $table->string("alkatresz_mennyiseg");
-            $table->foreignId("anyag_id")->constrained()->onUpdate("cascade")->onDelete("cascade");
+
+            //$table->unsignedBigInteger("anyag_id");
+            $table->foreignId('anyag_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+
             $table->string("anyag_mennyiseg");
             $table->timestamps();
-            $table->unique(["munkafelvevo_azonosito", "szerelo_azonosito", "munkafolyamat_id", "alkatres_id", "anyag_id"]);
         });
     }
 

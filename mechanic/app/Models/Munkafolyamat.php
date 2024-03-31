@@ -12,5 +12,7 @@ class Munkafolyamat extends Model
         'nev',
         'idotartam',
     ];
-
+    public function munkalap(){
+        return $this->hasMany(Munkalap::class, 'foreignKey');
+    }
 }
