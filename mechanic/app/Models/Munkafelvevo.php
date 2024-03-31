@@ -8,10 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Munkafelvevo extends Model
 {
     use HasFactory;
+   /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
     protected $fillable = [
-        'azonosito',
         'nev',
         'password',
+        'azonosito',
     ];
-
+    public function munkalap(){
+        return $this->hasMany(Munkalap::class, 'foreignKey');
+    }
 }
