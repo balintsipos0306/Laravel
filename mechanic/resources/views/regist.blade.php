@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
     <title>Szerelők</title>
 </head>
 <body>
@@ -46,20 +46,31 @@
     <main>
         <div class="container">
 
-            <h2>Belépés</h2>
+            <h2>Regisztráció</h2>
 
             <form id="login">
+                <div class="mb-3">
+                    <label for="firtsname" class="form-label">Keresztnév</label>
+                    <input type="name" class="form-control" id="exampleInputusername">
+                </div>
+
+                <div class="mb-3">
+                    <label for="secondname" class="form-label">Vezetéknév</label>
+                    <input type="name" class="form-control" id="exampleInputusername">
+                </div>
+
                 <div class="mb-3">
                     <label for="username" class="form-label">Felhasználónév</label>
                     <input type="name" class="form-control" id="exampleInputusername">
                 </div>
+
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Jelszó</label>
                     <input type="password" class="form-control" id="exampleInputPassword1">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-            <label for="registration">Nincs fiókód? <a href="/login/newAccount">Kattints ide a regisztrációhoz</a></label>
+            <label for="registration">Van már fiókod?<a href="/login">Vissza a belépéshez</a></label>
         </div>
 
     </main>
