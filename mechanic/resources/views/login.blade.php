@@ -33,7 +33,7 @@
                         <a class="nav-link active" aria-current="page" href="/">Főoldal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login">Belépés, regisztráció</a>
+                        <a class="nav-link" href="login">Belépés</a>
                     </li>
                     
                     </ul>
@@ -50,16 +50,15 @@
 
             <form id="login">
                 <div class="mb-3">
-                    <label for="username" class="form-label">Felhasználónév</label>
-                    <input type="name" class="form-control" id="exampleInputusername">
+                    <label for="ID" class="form-label">Azonosító</label>
+                    <input type="name" class="form-control" id="exampleInputID">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Jelszó</label>
                     <input type="password" class="form-control" id="exampleInputPassword1">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Belépés</button>
             </form>
-            <label for="registration">Nincs fiókód? <a href="/login/newAccount">Kattints ide a regisztrációhoz</a></label>
         </div>
 
     </main>
