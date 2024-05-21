@@ -51,7 +51,9 @@
 
         <div class="jobb">
             <div class="container">
-                <h1>Szolgáltatások</h1>
+
+            <h1>Szolgáltatások</h1>
+                
                 <section>
                     <ul>
                         <li>Karbantartás</li>
