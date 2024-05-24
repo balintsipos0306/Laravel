@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->unsignedBigInteger('munkalap_id');
             $table->foreign('munkalap_id')->references('id')->on('munkalaps')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->string("role");
         });
     }
 

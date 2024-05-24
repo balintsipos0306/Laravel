@@ -28,6 +28,7 @@ class UserFactory extends Factory
             'name' => 'admin',
             'password' => static::$password ??= Hash::make('admin'),
             'munkalap_id' => Munkalap::inRandomOrder()->first()->id,
+            'role' => 'Admin',
             'remember_token' => Str::random(10),
         ];
     }
