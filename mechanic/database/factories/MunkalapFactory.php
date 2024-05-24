@@ -4,9 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Alkatresz;
 use App\Models\Anyag;
-use App\Models\Munkafelvevo;
 use App\Models\Munkafolyamat;
-use App\Models\Szerelo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -24,8 +22,6 @@ class MunkalapFactory extends Factory
         return [
             //
             'felvetel_idopontja' => now(),
-            'szerelo_azonosito' => Szerelo::inRandomOrder()->first()->azonosito,
-            'munkafelvevo_azonosito' => Munkafelvevo::inRandomOrder()->first()->azonosito,
             // //autó adatai
             'rendszam' => fake()->bothify("???-###"),
             'gyartmany' => "Ford",

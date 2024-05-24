@@ -13,12 +13,7 @@ return new class extends Migration
     {
         Schema::create('munkalaps', function (Blueprint $table) {
             $table->id();
-            $table->string("munkafelvevo_azonosito", 6);
-            $table->foreign('munkafelvevo_azonosito')->references('azonosito')->on('munkafelvevos')->cascadeOnDelete()->cascadeOnUpdate();
             $table->date("felvetel_idopontja");
-            $table->string("szerelo_azonosito", 6);
-            $table->foreign('szerelo_azonosito')->references('azonosito')->on('szerelos')->cascadeOnDelete()->cascadeOnUpdate();
-            //autó adatai
             $table->string("rendszam", 7);
             $table->string("gyartmany");
             $table->integer("gyartas_eve");

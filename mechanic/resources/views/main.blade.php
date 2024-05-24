@@ -15,6 +15,14 @@
         <nav class="navbar navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Szerelőműhely</a>
+
+                <form action="/logout" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn-primary">Sign out</button>
+                </form>
+
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -44,32 +52,6 @@
             </div>
         </nav>
     </header>
-
-    <main>
-        <div class="container">
-
-            <h2>Belépés</h2>
-
-            <form id="login" method="POST" action="/login">
-                @csrf
-                <div class="mb-3">
-                    <label for="id" class="form-label">Felhasználónév</label>
-                    @error('id')
-                    <span class="text-sm text-red-600 mt-2 ml-1">{{ $message }}</span>
-                    @enderror
-                     <input type="name" class="form-control" id="id" name="id">
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Jelszó</label>
-                    <input type="password" class="form-control" id="password" name="password">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-            <!-- <label for="registration">Nincs fiókód? <a href="/login/newAccount">Kattints ide a regisztrációhoz</a></label> -->
-        </div>
-
-    </main>
-
 </body>
 
 </html>

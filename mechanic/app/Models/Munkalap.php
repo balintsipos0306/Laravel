@@ -22,11 +22,6 @@ class Munkalap extends Model
         'alkatresz_mennyiseg',
         'anyag_mennyiseg'
     ];
-    // $table->foreignId("munkafelvevo_azonosito")->constrained()->onUpdate("cascade")->onDelete("cascade");
-    public function munkafelvevo()
-    {
-        return $this->belongsTo(Munkafelvevo::class);
-    }
     // $table->foreignId("munkafolymat_id")->constrained()->onUpdate("cascade")->onDelete("cascade");;
     public function munkafolyamat()
     {
@@ -42,7 +37,7 @@ class Munkalap extends Model
     {
         return $this->belongsTo(Anyag::class);
     }
-    public function szerelo(){
-        return $this->belongsTo(Szerelo::class);
+    public function user(){
+        return $this->hasMany(User::class);
     }
 }
