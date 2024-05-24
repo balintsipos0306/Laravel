@@ -30,6 +30,7 @@
                             <button class="btn btn-success" type="submit">Keresés</button>
                         </form>
 
+<<<<<<< HEAD
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="/">Főoldal</a>
@@ -40,6 +41,18 @@
 
                         </ul>
                     </div>
+=======
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Főoldal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login">Belépés</a>
+                    </li>
+                    
+                    </ul>
+                </div>
+>>>>>>> 83a0968750bc092a9f590d86cc331c0c0accb033
                 </div>
             </div>
         </nav>
@@ -53,19 +66,27 @@
             <form id="login" method="POST" action="/login">
                 @csrf
                 <div class="mb-3">
+<<<<<<< HEAD
                     <label for="id" class="form-label">Felhasználónév</label>
                     @error('id')
                     <span class="text-sm text-red-600 mt-2 ml-1">{{ $message }}</span>
                     @enderror
                      <input type="name" class="form-control" id="id" name="id">
+=======
+                    <label for="ID" class="form-label">Azonosító</label>
+                    <input type="name" class="form-control" id="exampleInputID">
+>>>>>>> 83a0968750bc092a9f590d86cc331c0c0accb033
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Jelszó</label>
                     <input type="password" class="form-control" id="password" name="password">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Belépés</button>
             </form>
+<<<<<<< HEAD
             <!-- <label for="registration">Nincs fiókód? <a href="/login/newAccount">Kattints ide a regisztrációhoz</a></label> -->
+=======
+>>>>>>> 83a0968750bc092a9f590d86cc331c0c0accb033
         </div>
 
     </main>

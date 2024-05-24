@@ -33,7 +33,7 @@
                         <a class="nav-link active" aria-current="page" href="/">Főoldal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login">Belépés, regisztráció</a>
+                        <a class="nav-link" href="login">Belépés</a>
                     </li>
                     
                     </ul>
@@ -46,31 +46,31 @@
     <main>
         <div class="container">
 
-            <h2>Regisztráció</h2>
+            <h2>Munkafolyamat felvétele</h2>
 
             <form id="login">
                 <div class="mb-3">
-                    <label for="firtsname" class="form-label">Keresztnév</label>
-                    <input type="name" class="form-control" id="exampleInputusername">
+                    <label for="carId" class="form-label">Rendszám</label>
+                    <input type="name" class="form-control" id="exampleInputcarId">
                 </div>
 
                 <div class="mb-3">
-                    <label for="secondname" class="form-label">Vezetéknév</label>
-                    <input type="name" class="form-control" id="exampleInputusername">
+                    <label for="secondname" class="form-label">Felvétel időpontja</label>
+                    <input type="datetime-local" class="form-control" id="exampleInputdate">
                 </div>
 
-                <div class="mb-3">
-                    <label for="username" class="form-label">Felhasználónév</label>
-                    <input type="name" class="form-control" id="exampleInputusername">
-                </div>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Munkakör</option>
+                    <option value="1">Karbantartás</option>
+                    <option value="2">Javítás</option>
+                </select>
 
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Jelszó</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label for="exampleInputWork" class="form-label">Elvégzendő munka</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Munkafolyamat felvétele</button>
             </form>
-            <label for="registration">Van már fiókod?<a href="/login">Vissza a belépéshez</a></label>
         </div>
 
     </main>
