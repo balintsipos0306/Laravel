@@ -65,11 +65,8 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Belépés</button>
             </form>
-            <!-- <label for="registration">Nincs fiókód? <a href="/login/newAccount">Kattints ide a regisztrációhoz</a></label> -->
         </div>
-
     </main>
-
 </body>
 
 </html>

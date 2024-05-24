@@ -16,11 +16,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Szerelőműhely</a>
 
-                <form action="/logout" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn-primary">Sign out</button>
-                </form>
+
 
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -32,7 +28,6 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-
                         <form class="d-flex mt-3" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Keresés">
                             <button class="btn btn-success" type="submit">Keresés</button>
@@ -40,12 +35,16 @@
 
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/">Főoldal</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="login">Belépés, regisztráció</a>
+                                <a class="nav-link active" aria-current="page" href="/main">Főoldal</a>
                             </li>
 
+                            <li class="nav-item">
+                                <form action="/logout" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="nav-link">Sign out</button>
+                                </form>
+                            </li>
                         </ul>
                     </div>
                 </div>
