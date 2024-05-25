@@ -10,7 +10,6 @@ class Munkalap extends Model
 {
     use HasFactory;
     protected $fillable = [
-
         'felvetel_idopontja',
         // //autó adatai
         'rendszam',

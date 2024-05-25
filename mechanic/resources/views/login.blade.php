@@ -35,7 +35,7 @@
                                 <a class="nav-link active" aria-current="page" href="/">Főoldal</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="login">Belépés, regisztráció</a>
+                                <a class="nav-link" href="login">Belépés</a>
                             </li>
 
                         </ul>

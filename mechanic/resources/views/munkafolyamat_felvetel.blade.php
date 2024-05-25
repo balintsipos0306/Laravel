@@ -35,7 +35,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="login">Belépés</a>
                     </li>
-                    
+
                     </ul>
                 </div>
                 </div>
@@ -50,21 +50,14 @@
 
             <form id="login">
                 <div class="mb-3">
-                    <label for="carId" class="form-label">Rendszám</label>
-                    <input type="name" class="form-control" id="exampleInputcarId">
-                </div>
-
-                <div class="mb-3">
                     <label for="secondname" class="form-label">Felvétel időpontja</label>
                     <input type="datetime-local" class="form-control" id="exampleInputdate">
                 </div>
-
                 <select class="form-select" aria-label="Default select example">
                     <option selected>Munkakör</option>
                     <option value="1">Karbantartás</option>
                     <option value="2">Javítás</option>
                 </select>
-
                 <div class="mb-3">
                     <label for="exampleInputWork" class="form-label">Elvégzendő munka</label>
                     <input type="text" class="form-control" id="exampleInputPassword1">

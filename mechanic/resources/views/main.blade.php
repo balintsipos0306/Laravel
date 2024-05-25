@@ -45,6 +45,12 @@
                                     <button type="submit" class="nav-link">Sign out</button>
                                 </form>
                             </li>
+                            <li class="nav-item">
+                                <button type="submit" class="nav-link" href="munkafolyamat_felvetel">Munkafolyamat felvétele</button>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login">Dolgozók listája</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
