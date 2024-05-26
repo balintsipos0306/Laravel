@@ -17,7 +17,7 @@
                 <a class="navbar-brand" href="#">Szerelőműhely</a>
                 @extends("main")
                 @section("sidebar")
-                    @parent
+                @parent
                 @endsection
             </div>
         </nav>
@@ -25,25 +25,23 @@
 
     <main>
         <div class="container">
-
-            <h2>Munkafolyamat felvétele</h2>
-
-            <form id="login">
-                <div class="mb-3">
-                    <label for="secondname" class="form-label">Felvétel időpontja</label>
-                    <input type="datetime-local" class="form-control" id="exampleInputdate">
-                </div>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Munkakör</option>
-                    <option value="1">Karbantartás</option>
-                    <option value="2">Javítás</option>
-                </select>
-                <div class="mb-3">
-                    <label for="exampleInputWork" class="form-label">Elvégzendő munka</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1">
-                </div>
-                <button type="submit" class="btn btn-primary">Munkafolyamat felvétele</button>
-            </form>
+            <h2>Dolgozók Listája</h2>
+            <table class="table">
+                <tr>
+                    <td>Azonosito</td>
+                    <td>Név</td>
+                    <td>Jogosultság</td>
+                    <td></td>
+                </tr>
+                @foreach ($users as $user)
+                <tr>
+                    <td>{{$user->id}}</td>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->role}}</td>
+                    <td><button class="btn btn-primary"">Törlés</button></td>
+                </tr>
+                @endforeach
+            </table>
         </div>
 
     </main>
