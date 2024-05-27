@@ -19,6 +19,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'password',
+        'role',
     ];
 
     /**
@@ -45,5 +46,9 @@ class User extends Authenticatable
     }
     public function munkafolyamat(){
         return $this->belongsTo(Munkafolyamat::class);
+    }
+    public function hasPermission($permission)
+    {
+        return in_array($permission, $this->permissions);
     }
 }

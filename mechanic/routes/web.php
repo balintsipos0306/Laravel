@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ShowAllUserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -16,8 +17,9 @@ Route::get('/login', function () {
     
 });
 
-Route::post('/login', [LoginController::class, 'authenticate']);
 Route::delete('/logout', [LoginController::class, 'destroy']);
+Route::post('/login', [LoginController::class, 'authenticate']);
+// Route::get('/dolgozok', [ShowAllUserController::class, 'ShowAllUser']);
 
 //->middleware("CustomAuth");
 
@@ -26,7 +28,11 @@ Route::middleware('CustomAuth')->group(function () {
         return view('main');
     });
 
-    Route::get('/munkafolyamat_felvetel', function(){
+    Route::get('/munkafolyamat', function(){
         return view("munkafolyamat_felvetel");
+    });
+
+    Route::Get('/dolgozok', function(){
+        return view("dolgozok");
     });
 });

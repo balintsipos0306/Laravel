@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
-
+use App\Models\User;
 class CustomAuth
 {
     /**
@@ -21,5 +21,14 @@ class CustomAuth
         }
         $response = $next($request);
         return $response;
+    }
+
+    public function permission(Request $request, Closure $next, $permission)
+    {
+        if (Auth::check() && Auth::user()->hasPermission($permission)) {
+            return $next($request);
+        }
+
+        return redirect('/'); // Vagy 403-as hibakód visszaadása: abort(403);
     }
 }

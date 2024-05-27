@@ -15,10 +15,12 @@
         <nav class="navbar navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Szerelőműhely</a>
-
-
-
-
+                <div class="font-monospace align-bottom" style="background-color:red">
+                    <p style="color:white">
+                        Üdvözlünk {{Auth()->user()->name}}
+                    <p>
+                </div>
+                @section("sidebar")
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -26,6 +28,11 @@
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menü</h5>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div>
+                        <span >
+                            <center>Üdvözlünk {{Auth()->user()->name}}</center>
+                        <span>
                     </div>
                     <div class="offcanvas-body">
                         <form class="d-flex mt-3" role="search">
@@ -46,14 +53,25 @@
                                 </form>
                             </li>
                             <li class="nav-item">
-                                <button type="submit" class="nav-link" href="munkafolyamat_felvetel">Munkafolyamat felvétele</button>
+                                <a href="munkafolyamat">Munkafolyamat felvétele</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="login">Dolgozók listája</a>
+                                <a class="nav-link" href="dolgozok">Dolgozók listája</a>
                             </li>
                         </ul>
                     </div>
                 </div>
+                @show
+
+
+
+
+
+
+
+
+
+
             </div>
         </nav>
     </header>
