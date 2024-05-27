@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/form.css">
     <title>Szerelők</title>
 </head>
 <body>
@@ -50,18 +50,75 @@
 
             <form id="login">
                 <div class="mb-3">
-                    <label for="secondname" class="form-label">Felvétel időpontja</label>
-                    <input type="datetime-local" class="form-control" id="exampleInputdate">
+                    <label for="felvevoneve" class="form-label">Munkafelvevő neve</label>
+                    <input type="text" class="form-control" id="felvevoNev">
                 </div>
+
+                <label for="munkakor" class="form-label">Munkakör</label>
                 <select class="form-select" aria-label="Default select example">
-                    <option selected>Munkakör</option>
                     <option value="1">Karbantartás</option>
                     <option value="2">Javítás</option>
                 </select>
+
                 <div class="mb-3">
-                    <label for="exampleInputWork" class="form-label">Elvégzendő munka</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1">
+                    <label for="idopont" class="form-label">Felvétel időpontja</label>
+                    <input type="datetime-local" class="form-control" id="Date">
                 </div>
+
+                <h3>Gépjármű adatok</h3>
+
+                <div class="mb-3">
+                    <label for="rendszam" class="form-label">Rendszám</label>
+                    <input type="text" class="form-control" id="exampleInputdate">
+                </div>
+
+                <div class="mb-3">
+                    <label for="gyartmany" class="form-label">Gyártmány</label>
+                    <input type="text" class="form-control" id="exampleInputdate">
+                </div>
+
+                <div class="mb-3">
+                    <label for="tipus" class="form-label">Típus</label>
+                    <input type="text" class="form-control" id="exampleInputdate">
+                </div>
+
+                <div class="mb-3">
+                    <label for="tulNev" class="form-label">Tulajdonos neve</label>
+                    <input type="text" class="form-control" id="exampleInputdate">
+                </div>
+
+                <div class="mb-3">
+                    <label for="tulCim" class="form-label">Tulajdonos címe</label>
+                    <input type="text" class="form-control" id="exampleInputdate">
+                </div>
+
+                <div class="mb-3">
+                    <label for="szereloID" class="form-label">Szerelő azonosító</label>
+                    <input type="text" class="form-control" id="exampleInputdate">
+                </div>
+
+                <label for="anyag" class="form-label">Anyag típusa</label>
+                @php
+                    $materials = DB::table('anyags')->select('nev')->get();
+                @endphp
+
+                <select class="form-select" aria-label="Default select example">
+                    @foreach ($materials as $index => $anyag)
+                        <option value="{{ $index }}">{{ $anyag->nev }}</option>
+                    @endforeach
+                </select>
+
+                <label for="alkatresz" class="form-label">Alkatrész</label>
+                @php
+                    $materials = DB::table('alkatreszs')->select('nev')->get();
+                @endphp
+
+                <select class="form-select" aria-label="Default select example">
+                    @foreach ($materials as $index => $anyag)
+                        <option value="{{ $index }}">{{ $anyag->nev }}</option>
+                    @endforeach
+                </select>
+
                 <button type="submit" class="btn btn-primary">Munkafolyamat felvétele</button>
             </form>
         </div>
