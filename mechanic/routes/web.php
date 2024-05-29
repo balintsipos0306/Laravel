@@ -35,4 +35,12 @@ Route::middleware('CustomAuth')->group(function () {
     Route::Get('/dolgozok', function(){
         return view("dolgozok");
     });
+
+    Route::Get('/anyag', function(){
+        return view("material");
+    });
+
+    Route::Get('/alkatresz', function(){
+        return view("part");
+    });
 });

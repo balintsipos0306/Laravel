@@ -1,0 +1,15 @@
+main>.container:first-child{
+    float: left;
+}
+
+main>.container:last-child{
+    float:right;
+}
+
+.container{
+    width:40% !important;
+}
+
+h1{
+    color: white !important;
+}

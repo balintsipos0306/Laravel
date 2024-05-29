@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/form.css">
     <title>Szerelők</title>
 </head>
@@ -49,32 +50,32 @@
 
                 <div class="mb-3">
                     <label for="rendszam" class="form-label">Rendszám</label>
-                    <input type="text" class="form-control" id="exampleInputdate">
+                    <input type="text" class="form-control" id="rendszam">
                 </div>
 
                 <div class="mb-3">
                     <label for="gyartmany" class="form-label">Gyártmány</label>
-                    <input type="text" class="form-control" id="exampleInputdate">
+                    <input type="text" class="form-control" id="gyartmany">
                 </div>
 
                 <div class="mb-3">
                     <label for="tipus" class="form-label">Típus</label>
-                    <input type="text" class="form-control" id="exampleInputdate">
+                    <input type="text" class="form-control" id="tipus">
                 </div>
 
                 <div class="mb-3">
                     <label for="tulNev" class="form-label">Tulajdonos neve</label>
-                    <input type="text" class="form-control" id="exampleInputdate">
+                    <input type="text" class="form-control" id="tulnev">
                 </div>
 
                 <div class="mb-3">
                     <label for="tulCim" class="form-label">Tulajdonos címe</label>
-                    <input type="text" class="form-control" id="exampleInputdate">
+                    <input type="text" class="form-control" id="tulcim">
                 </div>
 
                 <div class="mb-3">
                     <label for="szereloID" class="form-label">Szerelő azonosító</label>
-                    <input type="text" class="form-control" id="exampleInputdate">
+                    <input type="text" class="form-control" id="szereloid">
                 </div>
 
                 <label for="anyag" class="form-label">Anyag típusa</label>
