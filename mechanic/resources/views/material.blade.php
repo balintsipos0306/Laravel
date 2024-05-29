@@ -35,12 +35,12 @@
             <h2>Anyag felvétele</h2>
 
                 <div class="mb-3">
-                    <label for="rendszam" class="form-label">Név</label>
+                    <label for="nev" class="form-label">Név</label>
                     <input type="text" class="form-control" id="nev">
                 </div>
 
                 <div class="mb-3">
-                    <label for="gyartmany" class="form-label">Mennyiség</label>
+                    <label for="mennyiseg" class="form-label">Mennyiség</label>
                     <input type="text" class="form-control" id="mennyiseg">
                 </div>
 

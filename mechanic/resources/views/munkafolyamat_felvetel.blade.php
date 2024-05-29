@@ -31,7 +31,7 @@
 
             <form id="login">
                 <div class="mb-3">
-                    <label for="felvevoneve" class="form-label">Munkafelvevő neve</label>
+                    <label for="felvevoNev" class="form-label">Munkafelvevő neve</label>
                     <input type="text" class="form-control" id="felvevoNev">
                 </div>
 
@@ -42,7 +42,7 @@
                 </select>
 
                 <div class="mb-3">
-                    <label for="idopont" class="form-label">Felvétel időpontja</label>
+                    <label for="Date" class="form-label">Felvétel időpontja</label>
                     <input type="datetime-local" class="form-control" id="Date">
                 </div>
 
@@ -59,23 +59,28 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="gyartasev" class="form-label">Gyártmás éve</label>
+                    <input type="number" class="form-control" id="gyartasev">
+                </div>
+
+                <div class="mb-3">
                     <label for="tipus" class="form-label">Típus</label>
                     <input type="text" class="form-control" id="tipus">
                 </div>
 
                 <div class="mb-3">
-                    <label for="tulNev" class="form-label">Tulajdonos neve</label>
+                    <label for="tulnev" class="form-label">Tulajdonos neve</label>
                     <input type="text" class="form-control" id="tulnev">
                 </div>
 
                 <div class="mb-3">
-                    <label for="tulCim" class="form-label">Tulajdonos címe</label>
+                    <label for="tulcim" class="form-label">Tulajdonos címe</label>
                     <input type="text" class="form-control" id="tulcim">
                 </div>
 
                 <div class="mb-3">
-                    <label for="szereloID" class="form-label">Szerelő azonosító</label>
-                    <input type="text" class="form-control" id="szereloid">
+                    <label for="szereloid" class="form-label">Szerelő azonosító</label>
+                    <input type="number" class="form-control" id="szereloid">
                 </div>
 
                 <label for="anyag" class="form-label">Anyag típusa</label>
@@ -88,6 +93,8 @@
                         <option value="{{ $index }}">{{ $anyag->nev }}</option>
                     @endforeach
                 </select>
+                <label for="anyagmennyiseg" class="form-label">Anyagmennyiség</label>
+                <input type="number" class="form-control" id="anyagmennyiseg">
 
                 <label for="alkatresz" class="form-label">Alkatrész</label>
                 @php
@@ -99,6 +106,8 @@
                         <option value="{{ $index }}">{{ $anyag->nev }}</option>
                     @endforeach
                 </select>
+                <label for="alkatreszmennyiseg" class="form-label">Alkatrész mennyiség</label>
+                <input type="number" class="form-control" id="alkatreszmennyiseg">
 
                 <button type="submit" class="btn btn-primary">Munkafolyamat felvétele</button>
             </form>
