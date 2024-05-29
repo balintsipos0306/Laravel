@@ -45,5 +45,6 @@ span{
     float: right;
     color: white;
     font-style: italic;
+    font-weight: bold;
     text-decoration: underline;
 }
