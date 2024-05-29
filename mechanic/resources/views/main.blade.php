@@ -53,8 +53,18 @@
                                 </form>
                             </li>
                             <li class="nav-item">
-                                <a href="munkafolyamat">Munkafolyamat felvétele</a>
+                                <a class="nav-link" href="munkafolyamat">Munkafolyamat felvétele</a>
                             </li>
+                            @if (Auth()->user()->name == "admin")
+                            <li class="nav-item">
+                                <a class="nav-link" href="munkafolyamat">Anyagok felvétele</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="munkafolyamat">Alkatrész felvétele</a>
+                            </li>
+                            @endif
+
                             <li class="nav-item">
                                 <a class="nav-link" href="dolgozok">Dolgozók listája</a>
                             </li>
