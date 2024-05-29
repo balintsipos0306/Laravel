@@ -46,13 +46,17 @@
                             </li>
 
                             <li class="nav-item">
-                                <form action="/logout" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="nav-link">Sign out</button>
-                                </form>
+                                <a class="nav-link" href="dolgozok">Dolgozók listája</a>
                             </li>
+
                             <li class="nav-item">
+                                <a class="nav-link" href="dolgozok">Munkalapok megtekintése</a>
+                            </li>
+                        </ul>
+
+                        <h3>Adatok felvétele</h3>
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
                                 <a class="nav-link" href="munkafolyamat">Munkafolyamat felvétele</a>
                             </li>
                             @if (Auth()->user()->name == "admin")
@@ -64,9 +68,16 @@
                                 <a class="nav-link" href="alkatresz">Alkatrész felvétele</a>
                             </li>
                             @endif
+                        </ul>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="dolgozok">Dolgozók listája</a>
+
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                                <form action="/logout" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="nav-link">Sign out</button>
+                                </form>
                             </li>
                         </ul>
                     </div>
