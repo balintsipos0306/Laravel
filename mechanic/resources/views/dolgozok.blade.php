@@ -29,7 +29,7 @@
             <h2>Dolgozók Listája</h2>
             <table class="table">
                 <tr>
-                    <td>Azonosito</td>
+                    <td>Azonosító</td>
                     <td>Név</td>
                     <td>Jogosultság</td>
                     <td></td>
