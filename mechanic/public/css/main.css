@@ -42,6 +42,7 @@ span{
 }
 
 #signout{
+    float: right;
     color: white;
     font-style: italic;
     text-decoration: underline;
