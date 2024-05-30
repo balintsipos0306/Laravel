@@ -31,4 +31,9 @@ class LoginController extends Controller
         $request->session()->regenerate();
         return redirect()->intended('/');
     }
+
+    public function page()
+    {
+        return view('munkafolyamat');
+    }
 }
