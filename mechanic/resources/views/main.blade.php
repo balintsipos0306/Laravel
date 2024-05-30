@@ -57,11 +57,11 @@
                             </li>
                             @if (Auth()->user()->name == "admin")
                             <li class="nav-item">
-                                <a class="nav-link" href="munkafolyamat">Anyagok felvétele</a>
+                                <a class="nav-link" href="anyag">Anyagok felvétele</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="munkafolyamat">Alkatrész felvétele</a>
+                                <a class="nav-link" href="alkatresz">Alkatrész felvétele</a>
                             </li>
                             @endif
 
