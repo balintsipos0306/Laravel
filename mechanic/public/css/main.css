@@ -30,21 +30,3 @@ main{
     font-weight: bold;
 }
 
-span{
-    margin: 0;
-    font-size: larger;
-    font-weight: bold;
-}
-
-#body{
-    margin: 0;
-    margin-top: -1em;
-}
-
-#signout{
-    float: right;
-    color: white;
-    font-style: italic;
-    font-weight: bold;
-    text-decoration: underline;
-}
