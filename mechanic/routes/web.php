@@ -14,7 +14,6 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     return view('login');
-    
 });
 
 Route::delete('/logout', [LoginController::class, 'destroy']);

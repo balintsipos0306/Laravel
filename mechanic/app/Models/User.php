@@ -44,11 +44,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    public function munkafolyamat(){
-        return $this->belongsTo(Munkafolyamat::class);
-    }
-    public function hasPermission($permission)
+    public function munkafolyamat()
     {
-        return in_array($permission, $this->permissions);
+        return $this->belongsTo(Munkafolyamat::class);
     }
 }
