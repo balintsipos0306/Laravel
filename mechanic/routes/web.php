@@ -14,7 +14,7 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     return view('login');
-    
+
 });
 
 Route::delete('/logout', [LoginController::class, 'destroy']);
@@ -34,6 +34,10 @@ Route::middleware('CustomAuth')->group(function () {
 
     Route::Get('/dolgozok', function(){
         return view("dolgozok");
+    });
+
+    Route::Get('/munkalapmegtekintes', function(){
+        return view("munkalapmegtekintes");
     });
 
     Route::Get('/anyag', function(){
