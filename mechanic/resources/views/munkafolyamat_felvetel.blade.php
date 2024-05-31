@@ -18,7 +18,7 @@
                 <a class="navbar-brand" href="#">Szerelőműhely</a>
                 @extends("main")
                 @section("sidebar")
-                    @parent
+                @parent
                 @endsection
             </div>
         </nav>
@@ -27,91 +27,104 @@
     <main>
         <div class="container">
 
-            <h2>Munkafolyamat felvétele</h2>
+            <h2>Munkalap felvétele</h2>
 
-            <form id="login">
-                <div class="mb-3">
-                    <label for="felvevoNev" class="form-label">Munkafelvevő neve</label>
-                    <input type="text" class="form-control" id="felvevoNev">
-                </div>
-
-                <label for="munkakor" class="form-label">Munkakör</label>
-                <select class="form-select" aria-label="Default select example">
-                    <option value="1">Karbantartás</option>
-                    <option value="2">Javítás</option>
-                </select>
+            <form id="login" action="/munkafolyamat" method="POST">
+                @csrf
 
                 <div class="mb-3">
-                    <label for="Date" class="form-label">Felvétel időpontja</label>
-                    <input type="datetime-local" class="form-control" id="Date">
+                    <label for="munkakor" class="form-label">Munkakör</label>
+                    <select class="form-select" aria-label="Default select example" id="munkakor" name="munkakor">
+                        <option value="Karbantartas" id="munkakor" name="munkakor">Karbantartás</option>
+                        <option value="Javitas" id="munkakor" name="munkakor">Javítás</option>
+                    </select>
                 </div>
 
                 <h3>Gépjármű adatok</h3>
 
                 <div class="mb-3">
                     <label for="rendszam" class="form-label">Rendszám</label>
-                    <input type="text" class="form-control" id="rendszam">
+                    <input type="text" class="form-control" id="rendszam" name="rendszam">
                 </div>
 
                 <div class="mb-3">
                     <label for="gyartmany" class="form-label">Gyártmány</label>
-                    <input type="text" class="form-control" id="gyartmany">
+                    <input type="text" class="form-control" id="gyartmany" name="gyartmany">
                 </div>
 
                 <div class="mb-3">
-                    <label for="gyartasev" class="form-label">Gyártmás éve</label>
-                    <input type="number" class="form-control" id="gyartasev">
+                    <label for="gyartas_eve" class="form-label">Gyártás éve</label>
+                    <input type="number" class="form-control" id="gyartas_eve" name="gyartas_eve">
                 </div>
 
                 <div class="mb-3">
-                    <label for="tipus" class="form-label">Típus</label>
-                    <input type="text" class="form-control" id="tipus">
+                    <label for="tulajdonos_nev" class="form-label">Tulajdonos neve</label>
+                    <input type="text" class="form-control" id="tulajdonos_nev" name="tulajdonos_nev">
                 </div>
 
                 <div class="mb-3">
-                    <label for="tulnev" class="form-label">Tulajdonos neve</label>
-                    <input type="text" class="form-control" id="tulnev">
+                    <label for="tulajdonos_cim" class="form-label">Tulajdonos címe</label>
+                    <input type="text" class="form-control" id="tulajdonos_cim" name="tulajdonos_cim">
                 </div>
 
                 <div class="mb-3">
-                    <label for="tulcim" class="form-label">Tulajdonos címe</label>
-                    <input type="text" class="form-control" id="tulcim">
+                    <label for="szerelo" class="form-label">Szerelő neve</label>
+                    <input type="text" class="form-control" value="{{Auth()->user()->name}}" id="szerelo" name="szerelo">
                 </div>
 
                 <div class="mb-3">
-                    <label for="szereloid" class="form-label">Szerelő azonosító</label>
-                    <input type="number" class="form-control" id="szereloid">
+                    <label for="anyag_id" class="form-label">Anyag típusa</label>
+                    @php
+                    $materials = DB::table('anyags')->select('*')->get();
+                    @endphp
+                    <select class="form-select" aria-label="Default select example" id="anyag_id" name="anyag_id">
+                        @foreach ($materials as $index => $anyag)
+                        <option value="{{ $anyag->id }}" id="anyag_id" name="anyag_id">{{ $anyag->nev }}</option>
+                        @endforeach
+                    </select>
                 </div>
 
-                <label for="anyag" class="form-label">Anyag típusa</label>
-                @php
-                    $materials = DB::table('anyags')->select('nev')->get();
-                @endphp
+                <div class="mb-3">
+                    <label for="anyag_mennyiseg" class="form-label">Anyagmennyiség</label>
+                    <input type="text" class="form-control" id="anyag_mennyiseg" name="anyag_mennyiseg">
+                </div>
 
-                <select class="form-select" aria-label="Default select example">
-                    @foreach ($materials as $index => $anyag)
-                        <option value="{{ $index }}">{{ $anyag->nev }}</option>
-                    @endforeach
-                </select>
-                <label for="anyagmennyiseg" class="form-label">Anyagmennyiség</label>
-                <input type="number" class="form-control" id="anyagmennyiseg">
+                <div class="mb-">
+                    <label for="alkatresz_id" class="form-label">Alkatrész</label>
+                    @php
+                    $materials = DB::table('alkatreszs')->select('*')->get();
+                    @endphp
+                    <select class="form-select" aria-label="Default select example" id="alkatresz_id" name="alkatresz_id">
+                        @foreach ($materials as $index => $anyag)
+                        <option value="{{ $anyag->id }}" id="alkatresz_id" name="alkatresz_id">{{ $anyag->nev }}</option>
+                        @endforeach
+                    </select>
+                </div>
 
-                <label for="alkatresz" class="form-label">Alkatrész</label>
-                @php
-                    $materials = DB::table('alkatreszs')->select('nev')->get();
-                @endphp
+                <div class="mb-3">
+                    <label for="alkatresz_mennyiseg" class="form-label">Alkatrész mennyiség</label>
+                    <input type="text" class="form-control" id="alkatresz_mennyiseg" name="alkatresz_mennyiseg">
+                </div>
 
-                <select class="form-select" aria-label="Default select example">
-                    @foreach ($materials as $index => $anyag)
-                        <option value="{{ $index }}">{{ $anyag->nev }}</option>
-                    @endforeach
-                </select>
-                <label for="alkatreszmennyiseg" class="form-label">Alkatrész mennyiség</label>
-                <input type="number" class="form-control" id="alkatreszmennyiseg">
+                <div class="mb-3">
+                    <Label for="munkafolyamat_id">Munkafolyamat</Label>
+                    @php
+                    $folyamat = DB::table('munkafolyamats')->select('*')->get();
+                    @endphp
+                    <select class="form-select" aria-label="Default select example" name="munkafolyamat_id" id="munkafolyamat_id">
+                        @foreach ($folyamat as $index => $anyag)
+                        <option value="{{ $anyag->id }}">{{ $anyag->nev }}</option>
+                        @endforeach
+                    </select>
+                </div>
 
                 <button type="submit" class="btn btn-primary">Munkafolyamat felvétele</button>
             </form>
         </div>
+
+        @if ($errors->any()) <div>
+            <ul> @foreach ($errors->all() as $error) <li>{{ $error }}</li> @endforeach </ul>
+        </div> @endif @if (session('success')) <div> {{ session('success') }} </div> @endif
 
     </main>
 

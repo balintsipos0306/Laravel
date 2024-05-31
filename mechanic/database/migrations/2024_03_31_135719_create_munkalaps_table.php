@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('munkalaps', function (Blueprint $table) {
             $table->id();
-            $table->date("felvetel_idopontja");
+            //$table->date("felvetel_idopontja");
             $table->string("rendszam", 7);
             $table->string("gyartmany");
             $table->integer("gyartas_eve");
             $table->string("tulajdonos_nev");
             $table->string("tulajdonos_cim");
+            $table->string("munkakor");
+            $table->string("szerelo");
             //Munkafolymat
             //$table->unsignedBigInteger("munkafolyamat_id");
             $table->foreignId('munkafolyamat_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();;

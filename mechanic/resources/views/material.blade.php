@@ -31,36 +31,18 @@
 
             @else
             <div class="container">
-            <form>
+            <form  action='/anyag' method="POST">
+            @csrf
             <h2>Anyag felvétele</h2>
 
                 <div class="mb-3">
                     <label for="nev" class="form-label">Név</label>
-                    <input type="text" class="form-control" id="nev">
+                    <input type="text" class="form-control" id="nev" name="nev">
                 </div>
 
-                <div class="mb-3">
-                    <label for="mennyiseg" class="form-label">Mennyiség</label>
-                    <input type="text" class="form-control" id="mennyiseg">
-                </div>
-
-
+                <!-- <button type="submit" class="btn btn-danger">Anyag törlése</button> -->
                 <button type="submit" class="btn btn-primary">Anyag felvétele</button>
             </form>
-        </div>
-
-        <div class="container">
-        <form>
-            <h2>Anyag törlése</h2>
-
-                <div class="mb-3">
-                    <label for="rendszam" class="form-label">Név</label>
-                    <input type="text" class="form-control" id="nev">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Anyag törlése</button>
-            </form>
-
         </div>
 
         @endif

@@ -1,11 +1,9 @@
 header{
     height: 3em;
 }
-
 body{
     background-color: #00a1f1;
 }
-
 main{
     width: 100%;
     height: max-content;
@@ -16,7 +14,6 @@ main{
     align-items: center;
     text-align: center;
 }
-
 .container{
     background-color: white;
     width: 50%;
@@ -24,9 +21,26 @@ main{
     padding: 1%;
     border-radius: 15px;
 }
-
 #login{
     text-align: left;
     font-weight: bold;
 }
 
+span{
+    margin: 0;
+    font-size: larger;
+    font-weight: bold;
+}
+
+#body{
+    margin: 0;
+    margin-top: -1em;
+}
+
+#signout{
+    color: white;
+    font-style: italic;
+    text-decoration: underline;
+    float:right;
+    font-weight: bold;
+}

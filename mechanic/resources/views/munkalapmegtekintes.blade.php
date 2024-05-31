@@ -25,28 +25,51 @@
     </header>
 
     <main>
-        <div class="container">
+        <div class="container" id="munkalap">
             <h2>Munkalap Megtekintése</h2>
             <table class="table">
-                <tr>
+                <tr id="header">
                     <td>Munkafelvevő Neve</td>
                     <td>Felvétel időpontja</td>
-                    <td>Munkakör</td>
-                    <td></td>
+                    <td>Rendszám</td>
+                    <td>Gyártmány</td>
+                    <td>Gyártás éve</td>
+                    <td>Tulajdonos neve</td>
+                    <td>Tulajdonos címe</td>
+                    <td>Alkatrész név</td>
+                    <td>Alkatrész mennyiség</td>
+                    <td>Anyag név</td>
+                    <td>Anyag mennyiség</td>
                 </tr>
                 @php
                     $munkalaps = DB::table('munkalaps')->select('*')->get()
                 @endphp
                 @foreach ($munkalaps as $munkalap)
+
+                @php
+                    $anyagnev = $munkalap -> anyag_id;
+                    $alkatresz = $munkalap -> alkatresz_id;
+                    $anyag = DB::table('anyags')->select('*')->where('id',$anyagnev)->first();
+                    $alkatresz = DB::table('alkatreszs')->select('*')->where('id',$anyagnev)->first();
+                @endphp
+
                 <tr>
                     <td>{{$munkalap->id}}</td>
-                    <td>{{$munkalap->felvetel_idopontja}}</td>
                     <td>{{$munkalap->rendszam}}</td>
+                    <td>{{$munkalap->gyartmany}}</td>
+                    <td>{{$munkalap->gyartas_eve}}</td>
+                    <td>{{$munkalap->tulajdonos_nev}}</td>
+                    <td>{{$munkalap->tulajdonos_cim}}</td>
+                    <td>{{$alkatresz->nev}}</td>
+                    <td>{{$munkalap->alkatresz_mennyiseg}}</td>
+                    <td>{{$anyag->nev}}</td>
+                    <td>{{$munkalap->anyag_mennyiseg}}</td>
+
 
                     @if ( Auth()->user()->name != "admin")
-                        <td><button disabled class="btn btn-primary">A törléshez admin jogosultság szükséges</button>
+                        <td><button disabled class="btn btn-primary">A lezáráshoz admin jogosultság szükséges</button>
                     @else
-                        <td><button class="btn btn-primary" onclick="deleteUser()">Törlés</button></td>
+                        <td><button class="btn btn-primary" onclick="deleteUser()">Lezárás</button></td>
                     @endif
                 </tr>
                 @endforeach

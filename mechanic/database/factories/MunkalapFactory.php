@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Alkatresz;
 use App\Models\Anyag;
 use App\Models\Munkafolyamat;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,7 +22,6 @@ class MunkalapFactory extends Factory
     {
         return [
             //
-            'felvetel_idopontja' => now(),
             // //autó adatai
             'rendszam' => fake()->bothify("???-###"),
             'gyartmany' => "Ford",
@@ -34,6 +34,8 @@ class MunkalapFactory extends Factory
             'alkatresz_id' => Alkatresz::inRandomOrder()->first()->id,
             'anyag_id' => Anyag::inRandomOrder()->first()->id,
             'munkafolyamat_id' => Munkafolyamat::inRandomOrder()->first()->id,
+            'munkakor' => "Javítás",
+            'szerelo' => "admin",
             
         ];
     }

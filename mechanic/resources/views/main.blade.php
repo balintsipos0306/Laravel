@@ -30,15 +30,25 @@
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div>
-                        <span >
+                        <span>
                             <center>Üdvözlünk {{Auth()->user()->name}}</center>
                         <span>
                     </div>
-                    <div class="offcanvas-body">
-                        <form class="d-flex mt-3" role="search">
+                    <div class="offcanvas-body" id="body">
+                        <!-- <form class="d-flex mt-3" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Keresés">
                             <button class="btn btn-success" type="submit">Keresés</button>
-                        </form>
+                        </form> -->
+
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                                <form action="/logout" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button id="signout" type="submit" class="nav-link">Sign out</button>
+                                </form>
+                            </li>
+                        </ul>
 
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
@@ -46,14 +56,18 @@
                             </li>
 
                             <li class="nav-item">
-                                <form action="/logout" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="nav-link">Sign out</button>
-                                </form>
+                                <a class="nav-link" href="dolgozok">Dolgozók listája</a>
                             </li>
+
                             <li class="nav-item">
-                                <a class="nav-link" href="munkafolyamat">Munkafolyamat felvétele</a>
+                                <a class="nav-link" href="munkalapmegtekintes">Munkalapok megtekintése</a>
+                            </li>
+                        </ul>
+
+                        <h3>Adatok felvétele</h3>
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                                <a class="nav-link" href="munkalap">Munkalap készítés</a>
                             </li>
                             @if (Auth()->user()->name == "admin")
                             <li class="nav-item">
@@ -64,23 +78,10 @@
                                 <a class="nav-link" href="alkatresz">Alkatrész felvétele</a>
                             </li>
                             @endif
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="dolgozok">Dolgozók listája</a>
-                            </li>
                         </ul>
                     </div>
                 </div>
                 @show
-
-
-
-
-
-
-
-
-
 
             </div>
         </nav>

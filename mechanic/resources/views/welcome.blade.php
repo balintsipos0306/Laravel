@@ -23,10 +23,10 @@
                 </div>
                 <div class="offcanvas-body">
 
-                    <form class="d-flex mt-3" role="search">
+                    <!-- <form class="d-flex mt-3" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Keresés">
                     <button class="btn btn-success" type="submit">Keresés</button>
-                    </form>
+                    </form> -->
 
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">

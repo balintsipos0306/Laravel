@@ -10,14 +10,18 @@ class Munkalap extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'felvetel_idopontja',
+        'munkakor',
         // //autó adatai
         'rendszam',
         'gyartmany',
         'gyartas_eve',
         'tulajdonos_nev',
         'tulajdonos_cim',
+        'szerelo',
         // //Munkafolymat
+        'munkafolyamat_id',
+        'alkatresz_id',
+        'anyag_id',
         'alkatresz_mennyiseg',
         'anyag_mennyiseg'
     ];
